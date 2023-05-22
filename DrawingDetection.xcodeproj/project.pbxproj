@@ -11,6 +11,9 @@
 		DF4003362A1B6CBA0087A552 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4003352A1B6CBA0087A552 /* ContentView.swift */; };
 		DF4003382A1B6CBB0087A552 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4003372A1B6CBB0087A552 /* Assets.xcassets */; };
 		DF40033B2A1B6CBB0087A552 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF40033A2A1B6CBB0087A552 /* Preview Assets.xcassets */; };
+		DF4003422A1B746B0087A552 /* DrawingClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = DF4003412A1B746B0087A552 /* DrawingClassifier.mlmodel */; };
+		DF4003452A1B747A0087A552 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4003442A1B747A0087A552 /* ViewModel.swift */; };
+		DF40034D2A1B881B0087A552 /* UIImage ext..swift in Sources */ = {isa = PBXBuildFile; fileRef = DF40034C2A1B881B0087A552 /* UIImage ext..swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		DF4003352A1B6CBA0087A552 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DF4003372A1B6CBB0087A552 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF40033A2A1B6CBB0087A552 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DF4003412A1B746B0087A552 /* DrawingClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DrawingClassifier.mlmodel; sourceTree = "<group>"; };
+		DF4003442A1B747A0087A552 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		DF40034C2A1B881B0087A552 /* UIImage ext..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage ext..swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +58,10 @@
 			isa = PBXGroup;
 			children = (
 				DF4003332A1B6CBA0087A552 /* DrawingDetectionApp.swift */,
-				DF4003352A1B6CBA0087A552 /* ContentView.swift */,
+				DF4003492A1B7E780087A552 /* Extension */,
+				DF4003462A1B7C1F0087A552 /* View */,
+				DF4003432A1B746F0087A552 /* ViewModel */,
+				DF4003412A1B746B0087A552 /* DrawingClassifier.mlmodel */,
 				DF4003372A1B6CBB0087A552 /* Assets.xcassets */,
 				DF4003392A1B6CBB0087A552 /* Preview Content */,
 			);
@@ -65,6 +74,30 @@
 				DF40033A2A1B6CBB0087A552 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DF4003432A1B746F0087A552 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DF4003442A1B747A0087A552 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DF4003462A1B7C1F0087A552 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DF4003352A1B6CBA0087A552 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DF4003492A1B7E780087A552 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DF40034C2A1B881B0087A552 /* UIImage ext..swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +171,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF4003362A1B6CBA0087A552 /* ContentView.swift in Sources */,
+				DF40034D2A1B881B0087A552 /* UIImage ext..swift in Sources */,
 				DF4003342A1B6CBA0087A552 /* DrawingDetectionApp.swift in Sources */,
+				DF4003452A1B747A0087A552 /* ViewModel.swift in Sources */,
+				DF4003422A1B746B0087A552 /* DrawingClassifier.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +306,7 @@
 				DEVELOPMENT_TEAM = 8R29TH66V6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Our app needs to access your library";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +336,7 @@
 				DEVELOPMENT_TEAM = 8R29TH66V6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Our app needs to access your library";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
