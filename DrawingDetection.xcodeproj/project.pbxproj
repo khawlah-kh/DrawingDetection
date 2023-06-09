@@ -11,9 +11,10 @@
 		DF4003362A1B6CBA0087A552 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4003352A1B6CBA0087A552 /* ContentView.swift */; };
 		DF4003382A1B6CBB0087A552 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4003372A1B6CBB0087A552 /* Assets.xcassets */; };
 		DF40033B2A1B6CBB0087A552 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF40033A2A1B6CBB0087A552 /* Preview Assets.xcassets */; };
-		DF4003422A1B746B0087A552 /* DrawingClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = DF4003412A1B746B0087A552 /* DrawingClassifier.mlmodel */; };
 		DF4003452A1B747A0087A552 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4003442A1B747A0087A552 /* ViewModel.swift */; };
 		DF40034D2A1B881B0087A552 /* UIImage ext..swift in Sources */ = {isa = PBXBuildFile; fileRef = DF40034C2A1B881B0087A552 /* UIImage ext..swift */; };
+		DF4003502A1BAB9F0087A552 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF40034F2A1BAB9F0087A552 /* Line.swift */; };
+		DFCAD6C22A30C46300E81C8A /* MyDrawingClassifier.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = DFCAD6C12A30C46300E81C8A /* MyDrawingClassifier.mlpackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,9 +23,10 @@
 		DF4003352A1B6CBA0087A552 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DF4003372A1B6CBB0087A552 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF40033A2A1B6CBB0087A552 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DF4003412A1B746B0087A552 /* DrawingClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DrawingClassifier.mlmodel; sourceTree = "<group>"; };
 		DF4003442A1B747A0087A552 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		DF40034C2A1B881B0087A552 /* UIImage ext..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage ext..swift"; sourceTree = "<group>"; };
+		DF40034F2A1BAB9F0087A552 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		DFCAD6C12A30C46300E81C8A /* MyDrawingClassifier.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = MyDrawingClassifier.mlpackage; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +60,11 @@
 			isa = PBXGroup;
 			children = (
 				DF4003332A1B6CBA0087A552 /* DrawingDetectionApp.swift */,
-				DF4003492A1B7E780087A552 /* Extension */,
 				DF4003462A1B7C1F0087A552 /* View */,
+				DF40034E2A1BAB960087A552 /* Model */,
 				DF4003432A1B746F0087A552 /* ViewModel */,
-				DF4003412A1B746B0087A552 /* DrawingClassifier.mlmodel */,
+				DF4003492A1B7E780087A552 /* Extension */,
+				DFCAD6C12A30C46300E81C8A /* MyDrawingClassifier.mlpackage */,
 				DF4003372A1B6CBB0087A552 /* Assets.xcassets */,
 				DF4003392A1B6CBB0087A552 /* Preview Content */,
 			);
@@ -98,6 +101,14 @@
 				DF40034C2A1B881B0087A552 /* UIImage ext..swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		DF40034E2A1BAB960087A552 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DF40034F2A1BAB9F0087A552 /* Line.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,8 +184,9 @@
 				DF4003362A1B6CBA0087A552 /* ContentView.swift in Sources */,
 				DF40034D2A1B881B0087A552 /* UIImage ext..swift in Sources */,
 				DF4003342A1B6CBA0087A552 /* DrawingDetectionApp.swift in Sources */,
+				DF4003502A1BAB9F0087A552 /* Line.swift in Sources */,
 				DF4003452A1B747A0087A552 /* ViewModel.swift in Sources */,
-				DF4003422A1B746B0087A552 /* DrawingClassifier.mlmodel in Sources */,
+				DFCAD6C22A30C46300E81C8A /* MyDrawingClassifier.mlpackage in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

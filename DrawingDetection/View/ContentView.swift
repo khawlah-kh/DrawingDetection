@@ -13,44 +13,61 @@ struct ContentView: View {
     @StateObject var vm = ViewModel()
     
     var body: some View {
-        VStack {
-            HStack {
-                ForEach([Color.green, .orange, .blue, .red, .pink, .black, .purple], id: \.self) { color in
-                    colorButton(color: color)
-                }
-                clearButton()
-            }
-
-            canvas
-            
-            Button {
-                let renderer = ImageRenderer(content: canvas.frame(width: 300, height: 300))
-                if let image = renderer.uiImage {
-                    vm.drawing = image
-                    vm.classify()
-                }
-            } label: {
-                Text("Detect")
+        NavigationView {
+            VStack {
+                Text(!vm.result.isEmpty ? "Predection: \(vm.result)" : "Predection")
+                    .foregroundColor( !vm.result.isEmpty ? .black : .white)
+                    .font(.title3)
                     .bold()
-                    .foregroundColor(.white)
-                    .padding(.horizontal,24)
-                    .padding(.vertical, 8)
+                    .padding(.horizontal)
+                    .padding(.vertical, 4)
                     .background{
-                        Color.purple
+                        !vm.result.isEmpty ?
+                        Color.purple.opacity(0.5) :
+                        Color.clear
                     }
                     .cornerRadius(8)
+                
+                HStack{
+                    canvas
+                    
+                    VStack {
+                        ForEach([Color.green, .orange, .blue, .red, .pink, .black, .purple], id: \.self) { color in
+                            colorButton(color: color)
+                                .padding(.vertical, 4)
+                        }
+                        clearButton()
+                        Spacer()
+                    }
+                    .padding(.trailing)
+                    
+                }
+                
+                Button {
+                    let renderer = ImageRenderer(content: canvas.frame(width: 300, height: 300))
+                    if let image = renderer.uiImage {
+                        vm.drawing = image
+                        vm.classify()
+                    }
+                } label: {
+                    Text("Detect 🤔")
+                        .bold()
+                        .foregroundColor(.white)
+                        .padding(.horizontal,24)
+                        .padding(.vertical, 8)
+                        .background{
+                            Color.purple
+                        }
+                        .cornerRadius(8)
+                        .padding(.bottom)
+                }
+                
+                Spacer()
+                
             }
+            .padding(.leading)
+            .navigationTitle("Drawing detection")
             
-            Text("\(vm.result)")
-                .bold()
-            Spacer()
-//            if let image = vm.drawing{
-//                Text("image detected")
-//                Image(uiImage: image)
-//                    .resizable()
-//                    .scaledToFit()
-//                    .frame(width: 299, height: 299)
-//            }
         }
     }
     
@@ -64,7 +81,7 @@ struct ContentView: View {
                 ctx.stroke(path, with: .color(line.color), style: StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round))
             }
         }
-
+        
         .gesture(
             DragGesture(minimumDistance: 0, coordinateSpace: .local)
                 .onChanged({ value in
@@ -103,6 +120,7 @@ struct ContentView: View {
     func clearButton() -> some View {
         Button {
             lines = []
+            vm.result = ""
         } label: {
             Image(systemName: "pencil.tip.crop.circle.badge.minus")
                 .font(.largeTitle)

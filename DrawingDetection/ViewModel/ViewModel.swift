@@ -17,9 +17,8 @@ final class ViewModel: ObservableObject{
         guard let resizedImage = drawing?.resizeTo(size: CGSize(width: 299, height: 299)),
         let buffer = resizedImage.toBuffer()
         else {return}
-        print("Detecting ....🧠")
         do{
-        let model = try DrawingClassifier(configuration: .init())
+            let model = try MyDrawingClassifier(configuration: .init())
             let predection = try model.prediction(image:buffer)
             self.result = predection.classLabel
         }
